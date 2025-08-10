@@ -1,0 +1,142 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://tse1.mm.bing.net/th/id/OIP.oH9Foju7m8ynzAEAZbm6_QHaEo?pid=Api&P=0&h=180') center center / cover no-repeat fixed;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(34, 34, 34, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color:#9b59b6;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  flex-wrap: wrap;
+  min-height: 90vh;
+}
+
+.hero-content {
+  max-width: 500px;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+}
+
+.hero-content h2 span {
+  color: white;
+}
+
+.hero-content p {
+  margin: 20px 0;
+}
+
+.btn {
+  background: linear-gradient(90deg, #9b59b6, #8e44ad);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Social Icons */
+.socials a {
+  margin: 0 5px;
+  font-size: 1.5rem;
+  color: #9b59b6;
+  transition: transform 0.3s;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+/* Profile Image */
+.hero img {
+  width: 290px;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #9b59b6;
+  box-shadow: 0 0 20px rgba(155,89,182,0.5);
+}
+
+/* Sections */
+section {
+  padding: 50px;
+  background: rgba(255,255,255,0.1);
+  margin: 20px auto;
+  border-radius: 12px;
+  max-width: 1000px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffddff;
+  position: relative;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(34, 34, 34, 0.8);
+  color: #fff;
+}
+

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sudharani Portfolio</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Full-screen fixed background image */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0; padding: 0;
+      color: #333;
+      scroll-behavior: smooth;
+      background: url('https://tse1.mm.bing.net/th/id/OIP.oH9Foju7m8ynzAEAZbm6_QHaEo?pid=Api&P=0&h=180') center center / cover no-repeat fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated overlay for subtle motion */
+    body::before {
+      content: "";
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255,255,255,0.3);
+      animation: overlayPulse 10s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @keyframes overlayPulse {
+      from { background: rgba(255,255,255,0.35); }
+      to { background: rgba(255,255,255,0.25); }
+    }
+
+    /* Header */
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 50px;
+      background: rgba(34, 34, 34, 0.8); color: #fff;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .header .logo {
+      font-weight: bold; font-size: 1.2rem; color: white; text-decoration: none;
+    }
+    .header .logo span { color: #9b59b6; }
+    .navbar a {
+      color: white; margin-left: 20px; text-decoration: none; transition: color 0.3s;
+    }
+    .navbar a:hover { color: #9b59b6; }
+
+    /* Home */
+    .home {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 50px;
+      flex-wrap: wrap;
+      min-height: 90vh;
+    }
+    .home .content { max-width: 500px; animation: fadeIn 1.5s ease; }
+    .home h1 { font-size: 2.5rem; }
+    .home h1 span { color: #9b59b6; }
+    .home h3 { font-size: 1.2rem; margin-top: 10px; color: #555; }
+    .btn {
+      background: linear-gradient(90deg, #9b59b6, #8e44ad); color: white; padding: 10px 20px;
+      border-radius: 30px; text-decoration: none; display: inline-block; margin-top: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+    .socials a { margin: 0 5px; font-size: 1.5rem; color: #9b59b6; transition: transform 0.3s; }
+    .socials a:hover { transform: scale(1.2); }
+    .home .image img {
+      width: 290px;
+      height: 290px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #9b59b6;
+      box-shadow: 0 0 20px rgba(155,89,182,0.5);
+      animation: glow 3s infinite alternate;
+    }
+
+    /* Section Defaults */
+    section {
+      padding: 50px;
+      background: rgba(255,255,255,0.9);
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 1000px;
+    }
+    h2 { text-align: center; margin-bottom: 20px; color: #9b59b6; position: relative; }
+    h2::after {
+      content: ""; display: block; width: 60px; height: 3px; background: #9b59b6;
+      margin: 8px auto 0;
+    }
+
+    /* Timeline & Cards */
+    .timeline .entry {
+      background: #fff; padding: 15px; margin: 10px 0;
+      border-left: 4px solid #9b59b6; border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .timeline .entry:hover { transform: translateX(5px); }
+    .cards { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card {
+      background: #fff; padding: 15px; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); flex: 1; min-width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+   /* Projects Section */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: url('https://wallpapers.com/images/high/professional-background-9clg4ra15cwxpfk5.webp') center/cover no-repeat;
+}
+
+/* Dark overlay for readability */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.project-card h3,
+.project-card p,
+.project-card a {
+  position: relative;
+  z-index: 1;
+}
+
+.project-card a.btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.project-card a.btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+
+    /* Skills */
+    ul { list-style: none; padding: 0; }
+    li { padding: 5px 0; }
+
+    /* Research */
+    .research-card {
+      padding: 15px; background: #fff; border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+background: url('') center/cover no-repeat;
+    }
+    .research-card:hover { transform: scale(1.02); }
+
+    /* Contact */
+    form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto; }
+    input, textarea {
+      padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 100%;
+    }
+    button {
+      background: linear-gradient(90deg, #9b59b6, #8e44ad); color: white; padding: 10px;
+      border-radius: 30px; border: none; cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+    /* Animations */
+    @keyframes glow {
+      from { box-shadow: 0 0 20px rgba(155,89,182,0.5); }
+      to { box-shadow: 0 0 40px rgba(155,89,182,0.8); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">Chennakesavula <span>Sudha Rani</span></a>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#research">Research</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home 
+  <section class="home" id="home">
+    <div class="content fade-in">
+      <h1>Hi, I'm <span>Sudha Rani</span></h1>
+      <h3><span class="typing"></span></h3>
+      <p>Passionate Software Development Engineer focused on building scalable, high-performance applications with modern technologies.</p>
+      <a href="Sudharani_ch.pdf" download="Sudharani_Resume.pdf" class="btn">Download Resume</a><br><br>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/chennakesavula-sudharani-a982022b2/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/sudharani2005" target="_blank"><i class='bx bxl-github'></i></a>
+        <a href="mailto:sudharani.ch123@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+    </div>
+    <div class="image fade-in">
+      <img src="images/Sudha_Rani.png" alt="Profile Photo">
+    </div>
+  </section>-->
+<!-- Home -->
+<section id="home" style="display: flex; justify-content: space-between; align-items: center; padding: 50px; font-family: Arial, sans-serif;">
+  <div class="content fade-in" style="flex: 1; font-size: 22px; line-height: 1.5;">
+    <h1 style="font-size: 42px; margin-bottom: 10px;">Hi, I'm <span style="color: #ff5733;">Sudha Rani</span></h1>
+    <h3 style="font-size: 28px; color: #0077b6; margin-bottom: 15px;"><span class="typing"></span></h3>
+    <p style="font-size: 20px; margin-bottom: 20px;">Passionate Software Development Engineer focused on building scalable, high-performance applications with modern technologies.</p>
+    <a href="Sudharani_ch.pdf" download="Sudharani_Resume.pdf" 
+       style="display: inline-block; padding: 12px 20px; font-size: 20px; background: #ff5733; color: white; text-decoration: none; border-radius: 8px;">
+       Download Resume
+    </a>
+    <br><br>
+    <div class="socials" style="margin-top: 10px;">
+      <a href="https://www.linkedin.com/in/chennakesavula-sudharani-a982022b2/" target="_blank" style="font-size: 40px; margin-right: 20px; color: #0077b5;"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://github.com/sudharani2005" target="_blank" style="font-size: 40px; margin-right: 20px; color: black;"><i class='bx bxl-github'></i></a>
+      <a href="mailto:sudharani.ch123@gmail.com" style="font-size: 40px; color: #d93025;"><i class='bx bx-envelope'></i></a>
+    </div>
+  </div>
+ <div class="image fade-in" style="flex: 1; text-align: center;">
+  <img src="images/Sudha_Rani.png" 
+       alt="Profile Photo" 
+          style="width: 350px; height: 350px; object-fit: cover; border-radius: 50%; border: 2px solid black;">
+</div>
+
+  </section>
+
+
+  <!-- Education -->
+  <section id="education" class="fade-in">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="entry"   style="background: url('https://wallpapers.com/images/hd/professional-background-4b31fgiuezafrguu.jpg') no-repeat center center/cover; color:black; padding: 15px; border-radius: 10px;">>
+        <h3>B.Tech in Computer Science & Engineering</h3>
+        <p>Vignan’s Nirula Institute Of Technology and Science for Women | 8.67 CGPA | 2022 - Present</p>
+      </div>
+      <div class="entry"  style="background: url('https://wallpapers.com/images/hd/professional-background-4b31fgiuezafrguu.jpg') no-repeat center center/cover; color:black; padding: 15px; border-radius: 10px;">>
+        <h3>Senior Secondary</h3>
+        <p>BIEAP | 93.4% | 2020 - 2022</p>
+      </div>
+      <div class="entry"  style="background: url('https://wallpapers.com/images/hd/professional-background-4b31fgiuezafrguu.jpg') no-repeat center center/cover; color: black; padding: 15px; border-radius: 10px;">>
+        <h3>Secondary</h3>
+        <p>SSC Board | 97% | 2020</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience --> 
+  <section id="experience" class="fade-in">
+    <h2>Experience </h2>
+    <div class="cards">
+      <div class="card"   style="background: url('https://wallpapers.com/images/hd/professional-background-4b31fgiuezafrguu.jpg') no-repeat center center/cover; color:black; padding: 15px; border-radius: 10px;">>
+        <h3>IoT Internship</h3>
+        <p>June 2024 – July 2024 | Hands-on IoT projects with real-time monitoring using NodeMCU, sensors, and automated systems.</p>
+      </div>
+      <div class="card"  style="background: url('https://wallpapers.com/images/hd/professional-background-4b31fgiuezafrguu.jpg') no-repeat center center/cover; color: black; padding: 15px; border-radius: 10px;">>
+        <h3>Software Engineer Intern - IBM</h3>
+        <p>May 2024 – June 2024 | Built ML models using clustering, decision trees, pipelines, and optimized for accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- Projects -->
+<section id="projects" class="fade-in">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    
+    <div class="project-card">
+      <h3>Smart Bridge</h3>
+      <p>Automatic height adjustment during floods using IoT (NodeMCU ESP8266, servo motors, sensors).</p>
+      <a href="https://github.com/sudharani2005/Smart-bridge" target="_blank" class="btn">
+        <i class='bx bxl-github'></i> View on GitHub
+      </a>
+    </div>
+    
+    <div class="project-card">
+      <h3>Python To-Do List</h3>
+      <p>GUI task manager with Tkinter for organizing daily tasks.</p>
+      <a href="https://github.com/sudharani2005/To-Do-List" target="_blank" class="btn">
+        <i class='bx bxl-github'></i> View on GitHub
+      </a>
+    </div>
+    
+    <div class="project-card">
+      <h3>Customer Segmentation</h3>
+      <p>Full-stack Django app with PCA + KMeans clustering, persona generation, and churn prediction.</p>
+      <a href="https://github.com/sudharani2005/Customer_segmentation-for-E-commerce" target="_blank" class="btn">
+        <i class='bx bxl-github'></i> View on GitHub
+      </a>
+    </div>
+  
+  </div>
+</section>
+
+  <!-- Skills -->
+  <section id="skills" class="fade-in">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Programming : Python, Java, C</li>
+      <li>Web development : HTML, CSS, JavaScript</li>
+      <li>Frame Works : Django</li>
+      <li>Data Bases : MySQL</li>
+      <li>Core Subjects : Data Structures & Algorithms, OOP</li>
+    </ul>
+  </section>
+
+  <!-- Research -->
+  <section id="research" class="fade-in">
+    <h2>Research Contributions</h2>
+    <div class="research-card" style="background-color: lightblue; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; margin-bottom: 10px;">
+      <h3>Credit Card Fraud Detection Using ML</h3>
+      <p>Published in JETIR (Oct 2024) – compared ML algorithms for fraud detection. Found Random Forest most effective.</p>
+
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="fade-in">
+    <h2>Certifications</h2>
+    <ul>
+      <li>NPTEL: The Joy of Computing Using Python</li>
+      <li>APSSDC: Data Science Using Python</li>
+      <li>EDX: Intro to Data Science with Python</li>
+      <li>Infosys: Pragathi Path to Future – Cohort 3</li>
+      <li>Edunet: Sentiment Analysis</li>
+      <li>Purple Technologies: IoT Internship</li>
+    </ul>
+  </section>
+
+ <section id="contact" class="fade-in">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required 
+      style="background-color: lightblue; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; margin-bottom: 10px;">
+    
+    <input type="email" placeholder="Your Email" required 
+      style="background-color: lightblue; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; margin-bottom: 10px;">
+    
+    <textarea placeholder="Your Message" required 
+      style="background-color: lightblue; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; height: 50px; box-sizing: border-box; margin-bottom: 10px;"></textarea>
+  
+    <button type="submit" 
+      style="padding: 8px 16px; background-color: #007BFF; color: white; border: none; border-radius: 4px;">Send Message</button>
+  </form>
+</section>
+
+  <!-- JavaScript -->
+  <script>
+    // Typing Animation
+    const typingElement = document.querySelector(".typing");
+    const words = ["Software Developer"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+      if (!isDeleting) {
+        typingElement.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === currentWord.length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+          return;
+        }
+      } else {
+        typingElement.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+        }
+      }
+      setTimeout(type, isDeleting ? 100 : 200);
+    }
+    type();
+
+    // Scroll Animation
+    const fadeElems = document.querySelectorAll(".fade-in");
+    window.addEventListener("scroll", () => {
+      fadeElems.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
