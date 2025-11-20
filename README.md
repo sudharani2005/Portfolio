@@ -5,8 +5,6 @@ This site is designed to showcase my **skills, projects, experience, certificati
 
 🚀 **Live Portfolio Link:**  
 (Replace this with your GitHub Pages link after deployment)  
-👉 *https://your-username.github.io/your-repo-name/*
-
 
 ---
 
@@ -16,8 +14,7 @@ I am **Chennakesavula Sudha Rani**, a passionate and dedicated **Software Develo
 - Web Development  
 - Python, Java, and C  
 - Django Framework  
-- Data Science basics  
-- IoT Systems  
+- Data Science basics   
 - Machine Learning basics  
 
 I love building meaningful projects and developing real-time applications that solve real-world problems.
