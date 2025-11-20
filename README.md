@@ -3,10 +3,6 @@
 Welcome to my personal portfolio website!  
 This site is designed to showcase my **skills, projects, experience, certifications, and research work** in a clean and modern layout.
 
-🚀 **Live Portfolio Link:**  
-(Replace this with your GitHub Pages link after deployment)  
-
----
 
 ## 👩‍💻 About Me  
 I am **Chennakesavula Sudha Rani**, a passionate and dedicated **Software Development Engineer** with hands-on experience in:
